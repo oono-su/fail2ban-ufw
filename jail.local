@@ -1,0 +1,21 @@
+[DEFAULT]
+banaction = ufw
+banaction_allports = ufw
+
+ignoreip = 192.168.0.0/24
+
+[sshd]
+enabled = true
+maxretry = 4
+findtime = 24h
+bantime = 2d
+
+[recidive]
+enabled = true
+filter = recidive
+logpath = /var/log/fail2ban.log
+action = iptables-allports
+maxretry = 2 
+findtime = 2d
+bantime = 1y 
+
